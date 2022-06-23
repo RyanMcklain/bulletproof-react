@@ -44,7 +44,7 @@ const SideNavigation = () => {
             'text-gray-300 hover:bg-gray-700 hover:text-white',
             'group flex items-center px-2 py-2 text-base font-medium rounded-md'
           )}
-          activeClassName="bg-gray-900 text-white"
+          // activeClassName="bg-gray-900 text-white"
         >
           <item.icon
             className={clsx(
