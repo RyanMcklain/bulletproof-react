@@ -1,3 +1,4 @@
+import { PencilIcon } from '@heroicons/react/outline';
 import { Meta, Story } from '@storybook/react';
 
 import { Button, ButtonProps } from './Button';
@@ -30,4 +31,16 @@ export const Danger = Template.bind({});
 Danger.args = {
   children: 'Danger Button',
   variant: 'danger',
+};
+
+export const WithEndIcon = Template.bind({});
+WithEndIcon.args = {
+  children: 'Icon Button',
+  endIcon: <PencilIcon className="h-4 w-4" />,
+};
+
+export const WithStartIcon = Template.bind({});
+WithStartIcon.args = {
+  children: 'Icon Button',
+  startIcon: <PencilIcon className="h-4 w-4" />,
 };

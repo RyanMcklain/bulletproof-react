@@ -7,6 +7,7 @@ const variants = {
   primary: 'bg-blue-600 text-white hover:bg-gray-50:text-blue-600',
   inverse: 'bg-white text-blue-600 hover:bg-blue-600:text-white',
   danger: 'bg-red-600 text-white hover:bg-red-50:text-red-600',
+  ghost: 'bg-transparent text-blue-600 border-0 hover:bg-blue-600:text-white',
 };
 
 const sizes = {
@@ -23,6 +24,7 @@ type IconProps =
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: keyof typeof variants;
   size?: keyof typeof sizes;
+  isIconOnly?: boolean;
   isLoading?: boolean;
 } & IconProps;
 
@@ -36,6 +38,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       isLoading = false,
       startIcon,
       endIcon,
+      isIconOnly,
       ...props
     },
     ref
@@ -54,7 +57,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {isLoading && <Spinner size="sm" className="text-current" />}
         {!isLoading && startIcon}
-        <span className="mx-2">{props.children}</span> {!isLoading && endIcon}
+        {!isIconOnly && <span className="mx-2">{props.children}</span>}
+        {!isLoading && endIcon}
       </button>
     );
   }
