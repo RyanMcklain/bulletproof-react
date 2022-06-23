@@ -1,5 +1,4 @@
 import {
-  MenuIcon,
   MicrophoneIcon,
   VideoCameraIcon,
   ViewGridIcon,
@@ -8,13 +7,14 @@ import {
 } from '@heroicons/react/solid';
 
 import { Button } from '../Elements';
+import { Menu } from '../Menu';
 
 export type HeaderProps = Record<string, unknown>;
 
 const Header = () => {
   return (
     <div className="flex">
-      <Button startIcon={<MenuIcon className="h-4 w-4" />} isIconOnly variant="ghost" />
+      <Menu />
       <Button startIcon={<MicrophoneIcon className="h-4 w-4" />} isIconOnly variant="ghost" />
       <Button startIcon={<VideoCameraIcon className="h-4 w-4" />} isIconOnly variant="ghost" />
       <Button startIcon={<ViewGridIcon className="h-4 w-4" />} isIconOnly variant="ghost" />
